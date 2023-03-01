@@ -46,7 +46,6 @@ fetch(
         console.error(err);
     });
 
-//CONSTANTS
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 8;
 
@@ -62,12 +61,12 @@ startGame = () => {
 getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
-        //go to the end page
+        
         return window.location.assign('/end.html');
     }
     questionCounter++;
     progressText.innerHTML = `Question ${questionCounter}/${MAX_QUESTIONS}`;
-    //Update the progress bar
+ 
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
